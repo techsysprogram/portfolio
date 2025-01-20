@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "standalone", // Important pour Northflank
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
