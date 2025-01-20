@@ -1,101 +1,102 @@
-import Image from "next/image";
+import Image from "next/image"
+import { Github, Linkedin, Mail } from "lucide-react"
+import { ModeToggle } from "../components/theme-toggle"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      <main className="container mx-auto px-4 py-8">
+        <div className="flex justify-end mb-4">
+          <ModeToggle />
         </div>
+        <header className="text-center mb-12">
+          <Image
+            src="https://media.licdn.com/dms/image/v2/D4E03AQEP5S4OuDp_Mw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729255545923?e=1743033600&v=beta&t=IhoG3vZPulJn6n4mSKXzBGDOyMS3lqv85T31JKSbsrA"
+            alt="Miguel Bellota"
+            width={150}
+            height={150}
+            className="rounded-full mx-auto mb-4"
+          />
+          <h1 className="text-3xl font-bold mb-2">Miguel Bellota</h1>
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-4">
+            Développeur Full Stack | Étudiant en Informatique.
+          </p>
+          <div className="flex justify-center space-x-4">
+            <a
+              href="https://github.com/techsysprogram"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/miguel-bellota-157144194/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a
+              href="mailto:votre@email.com"
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+            >
+              <Mail className="w-6 h-6" />
+            </a>
+          </div>
+        </header>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">À propos</h2>
+          <p className="text-gray-700 dark:text-gray-300">
+            Étudiant passionné en informatique avec une expérience en développement full stack. Je suis actuellement à
+            la recherche de nouvelles opportunités pour mettre en pratique mes compétences et continuer à apprendre dans
+            le domaine du développement web.
+          </p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">Expérience</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xl font-medium">Développeur Full Stack</h3>
+              <p className="text-gray-600 dark:text-gray-400">Freelance · Temps partiel</p>
+              <p className="text-gray-600 dark:text-gray-400">sept. 2022 - Aujourd'hui · 1 an 8 mois</p>
+              <p className="text-gray-700 dark:text-gray-300 mt-2">
+                Développement de sites web et d'applications pour divers clients, utilisant des technologies modernes
+                comme React, Node.js, et MongoDB.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">Formation</h2>
+          <div>
+            <h3 className="text-xl font-medium">Université de Technologie de Troyes</h3>
+            <p className="text-gray-600 dark:text-gray-400">
+              Diplôme d'ingénieur, Informatique et sciences de l'information
+            </p>
+            <p className="text-gray-600 dark:text-gray-400">2021 - 2024</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">Compétences</h2>
+          <div className="flex flex-wrap gap-2">
+            {["JavaScript", "React.js", "Node.js", "MongoDB", "HTML", "CSS", "Git", "Agile"].map((skill) => (
+              <span
+                key={skill}
+                className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
-  );
+  )
 }
+
