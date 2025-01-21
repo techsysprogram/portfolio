@@ -10,11 +10,12 @@ const nextConfig: NextConfig = {
   output: "standalone", // Important pour Northflank
   reactStrictMode: true,
   images: {
+    domains: ["res.cloudinary.com"], // Ajoutez ici tous les domaines nécessaires
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "media.licdn.com",
-        pathname: "/dms/image/**",
+        hostname: "res.cloudinary.com",
+        pathname: "/dshznc4xx/**",
       },
     ],
   },
