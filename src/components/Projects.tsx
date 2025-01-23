@@ -14,7 +14,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Projects() {
   return (
-    <section className="max-w-5xl mx-auto">
+    <section className="wrapper">
       <h2 className="text-2xl font-bold text-center mb-8">Projets récents</h2>
 
       <div className="relative">
@@ -35,7 +35,7 @@ export default function Projects() {
             768: { slidesPerView: 2 }, // Tablette : 2 projets
             1024: { slidesPerView: 3 } // Desktop : 3 projets
           }}
-          className="w-full"
+          /* className="w-full" */
         >
           {projectsData.map((project) => (
             <SwiperSlide key={project.id}>
@@ -59,12 +59,16 @@ function ProjectCard({ project }: { project: any }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <Card className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 h-[260px] flex flex-col justify-between">
+    <Card className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 h-[240px] flex flex-col justify-between">
       <div>
         <CardHeader>
-          <CardTitle className="text-lg font-semibold text-blue-600 dark:text-blue-400">{project.title}</CardTitle>
+          {/* Titre limité à une seule ligne avec "..." */}
+          <CardTitle className="text-lg font-semibold text-blue-600 dark:text-blue-400 truncate">
+            {project.title}
+          </CardTitle>
         </CardHeader>
         <CardContent>
+          {/* Résumé limité à 2 lignes */}
           <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2 h-[48px]">
             {project.summary}
           </p>
@@ -86,3 +90,4 @@ function ProjectCard({ project }: { project: any }) {
     </Card>
   );
 }
+

@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <header className="pt-20 pb-6 bg-gradient-to-br from-blue-500 to-blue-700 dark:from-blue-800 dark:to-blue-600 text-white shadow-md">
-      <div className="container mx-auto text-center">
+      <div className= "text-center">
         <Image
           src="https://res.cloudinary.com/dshznc4xx/image/upload/v1737478718/MiguelPC_d1f2ux.jpg"
           alt="Miguel Bellota"
