@@ -8,11 +8,11 @@ import Contact from "../components/Contact";
 export default function Home() {
   return (
     <>
-      <main className="py-12 space-y-16 bg-background max-w-7xl mx-auto">
       <Navbar />
+      <main className="py-12 space-y-16 bg-background max-w-7xl mx-auto">
         <Hero />
 
-        <section className="flex px-10 flex-col gap-10 bg-background">
+        <section className="flex px-[1rem] flex-col gap-10 bg-background">
           <About />
           <Projects />
           <Testimonials />

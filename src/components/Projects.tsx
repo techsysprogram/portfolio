@@ -21,7 +21,7 @@ export default function Projects() {
         {/* Flèche gauche (sans fond au hover) */}
         <button className="swiper-button-prev absolute top-1/2 -left-5 z-10 hidden md:flex transform -translate-y-1/2 
           text-gray-500 dark:text-gray-300 opacity-50 hover:opacity-100 transition-all duration-300">
-          <ChevronLeft className="w-7 h-7" />
+          <ChevronLeft className="w-2 h-2" />
         </button>
 
         {/* Slider Swiper */}
@@ -47,7 +47,7 @@ export default function Projects() {
         {/* Flèche droite (sans fond au hover) */}
         <button className="swiper-button-next absolute top-1/2 -right-5 z-10 hidden md:flex transform -translate-y-1/2 
           text-gray-500 dark:text-gray-300 opacity-50 hover:opacity-100 transition-all duration-300">
-          <ChevronRight className="w-7 h-7" />
+          <ChevronRight className="w-4 h-4" />
         </button>
       </div>
     </section>
@@ -72,13 +72,11 @@ function ProjectCard({ project }: { project: any }) {
           <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2 h-[48px]">
             {project.summary}
           </p>
+            <Button onClick={()=>setOpen(true)} variant="outline">Voir plus</Button>
         </CardContent>
       </div>
       <div className="mt-auto">
         <Dialog open={open} onOpenChange={setOpen}>
-          <DialogTrigger asChild>
-            <Button variant="outline">Voir plus</Button>
-          </DialogTrigger>
           <DialogContent>
             <DialogHeader>
               <DialogTitle>{project.title}</DialogTitle>
