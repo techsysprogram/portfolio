@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
       <main className="container mx-auto px-6 py-12 space-y-16">
+        <Hero />
         <About />
         <Projects />
         <Testimonials />

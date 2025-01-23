@@ -1,56 +1,70 @@
 "use client";
+
 import { useState } from "react";
 import { ModeToggle } from "./theme-toggle";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="p-4 bg-white dark:bg-gray-900 shadow-md fixed w-full z-10">
-      <div className="container mx-auto flex justify-between items-center">
+    /* padding lateral en tailwind */
+
+    <nav className="fixed top-0 left-0 w-full bg-background shadow-md z-50">
+      <div className="container mx-auto max-w-[1024px] flex items-center justify-between p-4">
+        {/* Logo et Mode Toggle */}
         <div className="flex items-center gap-4">
-          <h1 className="text-2xl font-extrabold text-blue-600 dark:text-blue-400">Miguel Bellota</h1>
+          <Link href="/" className="text-[1.4rem] font-extrabold text-primary">
+            Miguel Bellota
+          </Link>
           <ModeToggle />
         </div>
-        <button
-          className="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-        <div
-          className={`absolute top-16 left-0 w-full bg-white dark:bg-gray-900 shadow-md md:static md:flex md:gap-6 md:shadow-none md:w-auto md:bg-transparent transition-all duration-300 ease-in-out ${
-            isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 md:opacity-100"
-          } overflow-hidden`}
-        >
-          <Link
-            href="/"
-            className="block px-4 py-2 text-gray-700 dark:text-gray-300 md:inline-block hover:text-blue-500 dark:hover:text-blue-400 transition duration-200"
-          >
-            Accueil
-          </Link>
-          <Link
-            href="/projects"
-            className="block px-4 py-2 text-gray-700 dark:text-gray-300 md:inline-block hover:text-blue-500 dark:hover:text-blue-400 transition duration-200"
-          >
-            Projets
-          </Link>
-          <Link
-            href="/testimonials"
-            className="block px-4 py-2 text-gray-700 dark:text-gray-300 md:inline-block hover:text-blue-500 dark:hover:text-blue-400 transition duration-200"
-          >
-            Avis
-          </Link>
-          <Link
-            href="/posts"
-            className="block px-4 py-2 text-gray-700 dark:text-gray-300 md:inline-block hover:text-blue-500 dark:hover:text-blue-400 transition duration-200"
-          >
-            Posts
-          </Link>
+
+        {/* Menu Desktop */}
+        <div className="hidden md:flex gap-6">
+          <NavLink href="/">Accueil</NavLink>
+          <NavLink href="/projects">Projets</NavLink>
+          <NavLink href="/testimonials">Avis</NavLink>
+          <NavLink href="/posts">Posts</NavLink>
+        </div>
+
+        {/* Menu Mobile avec Dropdown */}
+        <div className="md:hidden">
+          <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-48">
+              <DropdownMenuItem asChild>
+                <Link href="/" onClick={() => setIsMenuOpen(false)}>Accueil</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/projects" onClick={() => setIsMenuOpen(false)}>Projets</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/testimonials" onClick={() => setIsMenuOpen(false)}>Avis</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/posts" onClick={() => setIsMenuOpen(false)}>Posts</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </nav>
+  );
+}
+
+// Composant de lien réutilisable
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link href={href} className="text-gray-700 dark:text-gray-300 hover:text-primary transition duration-200">
+      {children}
+    </Link>
   );
 }

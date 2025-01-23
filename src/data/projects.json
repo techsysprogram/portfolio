@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "LIB - Logiciel de lotos associatifs",
+    "summary": "Application pour organiser des lotos associatifs, intégrée à Scanlib.",
+    "description": "LIB est une solution complète pour les associations souhaitant organiser des lotos en ligne. L'application gère la vente des cartons, les tirages et les annonces en direct.",
+    "link": "#",
+    "image": "https://source.unsplash.com/random/800x400?technology"
+  },
+  {
+    "id": 2,
+    "title": "Portfolio",
+    "summary": "Un portfolio interactif et moderne.",
+    "description": "Ce portfolio présente mes compétences, réalisations et expériences professionnelles. Il inclut une interface dynamique et un mode sombre.",
+    "link": "#",
+    "image": "https://source.unsplash.com/random/800x400?technology"
+  },
+  {
+    "id": 3,
+    "title": "Gestionnaire de tâches",
+    "summary": "Une application intuitive de gestion de tâches.",
+    "description": "Permet de créer, suivre et organiser ses tâches de manière efficace, avec rappels et intégration mobile.",
+    "link": "#",
+    "image": "https://source.unsplash.com/random/800x400?technology"
+  },
+  {
+    "id": 4,
+    "title": "Application E-commerce",
+    "summary": "Une plateforme de vente en ligne avec Stripe.",
+    "description": "Une solution e-commerce permettant de vendre des produits numériques et physiques, avec un paiement sécurisé via Stripe.",
+    "link": "#",
+    "image": "https://source.unsplash.com/random/800x400?technology"
+  }
+]
